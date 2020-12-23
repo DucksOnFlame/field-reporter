@@ -1,0 +1,28 @@
+version: '3.4'
+
+networks:
+  df-network:
+
+services:
+
+  mongo-data-fetcher:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: mongoadmin
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      df-network:
+    expose:
+      - 27017/tcp
+
+  data-fetcher:
+    image: data-fetcher:latest
+    depends_on:
+      - mongo-data-fetcher
+    ports:
+      - 9091:8080
+    networks:
+      df-network:

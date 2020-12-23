@@ -1,0 +1,26 @@
+version: '3.4'
+
+networks:
+  register-network:
+
+services:
+
+  register-db:
+    image: postgres:13.1
+    environment:
+      POSTGRES_PASSWORD: registeradmin
+      POSTGRES_USER: registeradmin
+      POSTGRES_DB: register
+    networks:
+      register-network:
+    expose:
+      - 5432/tcp
+
+  service-register:
+    image: service-register:latest
+    depends_on:
+      - register-db
+    ports:
+      - 9090:8080
+    networks:
+      register-network:

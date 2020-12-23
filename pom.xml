@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<modules>
+		<module>data-fetcher</module>
+		<module>task-service</module>
+		<module>service-register</module>
+		<module>utils</module>
+		<module>service-register-client</module>
+	</modules>
+
+	<groupId>eu.ducksoft</groupId>
+	<artifactId>field-reporter-root</artifactId>
+	<name>field-reporter-root</name>
+	<version>1</version>
+
+	<description>Personal project to develop a microservice oriented application that provides daily reports on most interesting football statistics daily</description>
+
+	<properties>
+		<java.version>11</java.version>
+		<kotlin.version>1.4.21</kotlin.version>
+		<ktor.version>1.5.0</ktor.version>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+
+</project>
