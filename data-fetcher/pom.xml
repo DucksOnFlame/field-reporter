@@ -38,7 +38,17 @@
 		</dependency>
 		<dependency>
 			<groupId>eu.ducksoft</groupId>
-			<artifactId>utils</artifactId>
+			<artifactId>event-registry</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.ducksoft.utils</groupId>
+			<artifactId>utils-core</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.ducksoft.utils</groupId>
+			<artifactId>utils-kafka</artifactId>
 			<version>1</version>
 		</dependency>
 

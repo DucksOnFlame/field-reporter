@@ -1,10 +1,10 @@
-package eu.ducksoft.serviceregister.client.http
+package eu.ducksoft.serviceregister.client.rest
 
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.features.json.*
 
-class ServiceRegisterHttpClientFactory {
+internal class ServiceRegisterHttpClientFactory {
     companion object {
         fun getClient(): HttpClient {
             return HttpClient(CIO) {

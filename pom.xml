@@ -5,10 +5,11 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>data-fetcher</module>
-		<module>task-service</module>
+		<module>event-registry</module>
 		<module>service-register</module>
-		<module>utils</module>
 		<module>service-register-client</module>
+		<module>task-service</module>
+		<module>utils</module>
 	</modules>
 
 	<groupId>eu.ducksoft</groupId>

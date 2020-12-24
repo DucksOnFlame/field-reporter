@@ -9,75 +9,17 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>service-register-client</artifactId>
+	<artifactId>event-registry</artifactId>
+	<version>1</version>
 
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.4.30-M1</kotlin.version>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
-		<ktor.version>1.5.0</ktor.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>eu.ducksoft</groupId>
-			<artifactId>event-registry</artifactId>
-			<version>1</version>
-		</dependency>
-		<dependency>
-			<groupId>eu.ducksoft.utils</groupId>
-			<artifactId>utils-core</artifactId>
-			<version>1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-			<version>2.4.1.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.jetbrains.kotlinx</groupId>
-			<artifactId>kotlinx-coroutines-core</artifactId>
-			<version>1.4.2</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-core</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-core-jvm</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-cio</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-cio-jvm</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-gson</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ktor</groupId>
-			<artifactId>ktor-client-serialization-jvm</artifactId>
-			<version>${ktor.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib-jdk8</artifactId>
@@ -120,7 +62,6 @@
 	</pluginRepositories>
 
 	<build>
-		<sourceDirectory>src/main/kotlin</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
@@ -144,17 +85,7 @@
 				</executions>
 				<configuration>
 					<jvmTarget>11</jvmTarget>
-					<compilerPlugins>
-						<plugin>kotlinx-serialization</plugin>
-					</compilerPlugins>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.jetbrains.kotlin</groupId>
-						<artifactId>kotlin-maven-serialization</artifactId>
-						<version>${kotlin.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
