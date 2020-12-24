@@ -1,4 +1,4 @@
 cd $(dirname $0)
-docker-compose -f docker/docker-compose.yml down
+docker-compose -p service-register -f docker/docker-compose.yml down --remove-orphans
 docker build -t service-register -f ./docker/Dockerfile .
-docker-compose -f docker/docker-compose.yml up -d
+docker-compose -p service-register -f docker/docker-compose.yml up -d

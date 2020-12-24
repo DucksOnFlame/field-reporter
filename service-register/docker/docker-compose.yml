@@ -5,7 +5,7 @@ networks:
 
 services:
 
-  register-db:
+  db:
     image: postgres:13.1
     environment:
       POSTGRES_PASSWORD: registeradmin
@@ -16,10 +16,10 @@ services:
     expose:
       - 5432/tcp
 
-  service-register:
+  backend:
     image: service-register:latest
     depends_on:
-      - register-db
+      - db
     ports:
       - 9090:8080
     networks:

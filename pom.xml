@@ -28,8 +28,28 @@
 
 	<repositories>
 		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<id>jcenter</id>
 			<url>https://jcenter.bintray.com</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray.kotlin.eap</id>
+			<name>Bintray Kotlin EAP Repository</name>
+			<url>https://dl.bintray.com/kotlin/kotlin-eap</url>
 		</repository>
 	</repositories>
 

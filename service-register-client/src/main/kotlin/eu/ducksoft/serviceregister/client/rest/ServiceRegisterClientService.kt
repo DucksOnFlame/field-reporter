@@ -27,7 +27,7 @@ abstract class ServiceRegisterClientService(
 
     private suspend fun registerInServiceRegister() {
         logger.info("Registering service $serviceName with url $serviceUrl in ServiceRegistry...")
-        httpClient.put<HttpResponse>("$serviceRegisterUrl/service/$serviceName") {
+        httpClient.put<Unit>("$serviceRegisterUrl/service/$serviceName") {
             header(HttpHeaders.ContentType, ContentType.Application.Json)
             body = UpdateServiceRecordRequest(serviceUrl)
             port = 9090
