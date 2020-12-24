@@ -24,12 +24,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>eu.ducksoft</groupId>
-			<artifactId>field-reporter-root</artifactId>
-			<version>1</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
 			<groupId>eu.ducksoft.lib</groupId>
 			<artifactId>lib-service-register-client</artifactId>
 			<version>1</version>

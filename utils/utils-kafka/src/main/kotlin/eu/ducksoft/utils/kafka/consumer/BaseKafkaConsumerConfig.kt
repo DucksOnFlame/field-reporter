@@ -14,13 +14,15 @@ import java.util.*
 @EnableKafka
 @Configuration
 open class BaseKafkaConsumerConfig(
-        @Value("\${kafka.bootstrapAddress}") private val bootstrapAddress: String
+        @Value("\${kafka.bootstrapAddress}") private val bootstrapAddress: String,
+        @Value("\${service.name}") private val serviceName: String
 ) {
 
     @Bean
     open fun consumerFactory(): ConsumerFactory<String, String> {
         val props: MutableMap<String, Any> = HashMap()
         props[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = bootstrapAddress
+        props[ConsumerConfig.GROUP_ID_CONFIG] = serviceName
         props[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         props[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         return DefaultKafkaConsumerFactory(props)
