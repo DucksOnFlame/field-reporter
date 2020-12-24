@@ -21,6 +21,7 @@ internal class ServiceRegisterHttpClientFactory {
                     endpoint {
                         keepAliveTime = 30000
                         connectTimeout = 30000
+                        connectAttempts = 5
                     }
                 }
             }

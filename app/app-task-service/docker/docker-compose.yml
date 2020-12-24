@@ -1,0 +1,26 @@
+version: '3.4'
+
+networks:
+  tasks-network:
+
+services:
+
+  db:
+    image: postgres:13.1
+    environment:
+      POSTGRES_PASSWORD: tasksadmin
+      POSTGRES_USER: tasksadmin
+      POSTGRES_DB: tasks
+    networks:
+      tasks-network:
+    expose:
+      - 5432/tcp
+
+  backend:
+    image: task-service:latest
+    depends_on:
+      - db
+    ports:
+      - 9093:8080
+    networks:
+      tasks-network:

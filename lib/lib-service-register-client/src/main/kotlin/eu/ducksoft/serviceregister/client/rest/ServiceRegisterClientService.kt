@@ -5,6 +5,7 @@ import eu.ducksoft.serviceregister.client.rest.request.UpdateServiceRecordReques
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.http.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -17,14 +18,14 @@ import java.util.*
 class ServiceRegisterClientService(
         @Value("\${service.register.url}") private val serviceRegisterUrl: String,
         @Value("\${service.url}") private val serviceUrl: String,
-        @Value("\${service.name}") private val serviceName: String): InitializingBean {
+        @Value("\${service.name}") private val serviceName: String) : InitializingBean {
 
     private val logger: Logger = LoggerFactory.getLogger(ServiceRegisterClientService::class.java)
 
     private val httpClient: HttpClient = ServiceRegisterHttpClientFactory.getClient()
 
     override fun afterPropertiesSet() {
-        runBlocking {
+        runBlocking(Dispatchers.IO) {
             registerInServiceRegister()
         }
     }
