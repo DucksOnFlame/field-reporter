@@ -25,7 +25,7 @@ class ServiceRegisterClientService(
     private val httpClient: HttpClient = ServiceRegisterHttpClientFactory.getClient()
 
     override fun afterPropertiesSet() {
-        runBlocking(Dispatchers.IO) {
+        runBlocking {
             registerInServiceRegister()
         }
     }
