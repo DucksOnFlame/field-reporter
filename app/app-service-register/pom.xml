@@ -24,8 +24,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>eu.ducksoft</groupId>
-			<artifactId>event-registry</artifactId>
+			<groupId>eu.ducksoft.lib</groupId>
+			<artifactId>lib-event-registry</artifactId>
 			<version>1</version>
 		</dependency>
 		<dependency>
