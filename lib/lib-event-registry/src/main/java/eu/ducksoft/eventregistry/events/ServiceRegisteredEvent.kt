@@ -1,4 +1,4 @@
-package eu.ducksoft.eventregistry
+package eu.ducksoft.eventregistry.events
 
 data class ServiceRegisteredEvent(
         val serviceName: String,

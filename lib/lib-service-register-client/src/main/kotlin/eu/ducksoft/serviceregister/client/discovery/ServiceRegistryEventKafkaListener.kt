@@ -1,13 +1,12 @@
 package eu.ducksoft.serviceregister.client.discovery
 
-import eu.ducksoft.eventregistry.ServiceRegisteredEvent
+import eu.ducksoft.eventregistry.events.ServiceRegisteredEvent
+import eu.ducksoft.eventregistry.topics.SERVICE_REGISTER_TOPIC
 import eu.ducksoft.utils.core.json.GsonSerializer.Companion.fromJson
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Service
-
-const val SERVICE_REGISTER_TOPIC: String = "ServiceRegisterTopic"
 
 @Service
 class ServiceRegistryEventKafkaListener(private val serviceRegistryRepository: ServiceRegistryRepository) {
