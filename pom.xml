@@ -4,12 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>data-fetcher</module>
 		<module>event-registry</module>
-		<module>service-register</module>
 		<module>service-register-client</module>
-		<module>task-service</module>
 		<module>utils</module>
+		<module>app</module>
+		<module>commonlib</module>
 	</modules>
 
 	<groupId>eu.ducksoft</groupId>
